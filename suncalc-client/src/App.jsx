@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { API_URL } from "./config";
 
-const API_URL = "https://my-suncalc-api.onrender.com";
-
 function App() {
   const [lat, setLat] = useState("43.65");
   const [lon, setLon] = useState("-79.38");
