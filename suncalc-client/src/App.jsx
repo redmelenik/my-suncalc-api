@@ -9,7 +9,7 @@ function App() {
   const fetchSun = async () => {
     try {
       const res = await fetch(
-        `https://<https://my-suncalc-api.onrender.com/>/sun?lat=${lat}&lon=${lon}&date=${date}`
+        `https://my-suncalc-api.onrender.com/sun?lat=${lat}&lon=${lon}&date=${date}`
       );
       if (!res.ok) throw new Error("Network error");
       const json = await res.json();
