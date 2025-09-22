@@ -12,6 +12,11 @@ app.get('/sun', (req, res) => {
     times: SunCalc.getTimes(when, parseFloat(lat), parseFloat(lon))
   });
 });
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // Export a Lambda handler
 export const handler = serverlessExpress({ app });
