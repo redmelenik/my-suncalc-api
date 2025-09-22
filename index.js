@@ -12,6 +12,7 @@ app.get('/sun', (req, res) => {
     times: SunCalc.getTimes(when, parseFloat(lat), parseFloat(lon))
   });
 });
+
 // Port Setting
 const PORT = process.env.PORT || 3000;
 
