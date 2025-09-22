@@ -12,10 +12,16 @@ app.get('/sun', (req, res) => {
     times: SunCalc.getTimes(when, parseFloat(lat), parseFloat(lon))
   });
 });
+// Port Setting
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+// Existing middleware or API routes…
+app.get("/", (req, res) => {
+  res.send("Welcome to the SunCalc API");
 });
 
 // Export a Lambda handler
