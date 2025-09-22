@@ -2,7 +2,6 @@ import express from 'express';
 import serverlessExpress from '@vendia/serverless-express';
 import SunCalc from 'suncalc';
 import cors from "cors";
-app.use(cors());
 
 const app = express();
 
@@ -21,6 +20,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.use(cors());
 
 // Existing middleware or API routes…
 app.get("/", (req, res) => {
