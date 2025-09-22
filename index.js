@@ -1,6 +1,8 @@
 import express from 'express';
 import serverlessExpress from '@vendia/serverless-express';
 import SunCalc from 'suncalc';
+import cors from "cors";
+app.use(cors());
 
 const app = express();
 
