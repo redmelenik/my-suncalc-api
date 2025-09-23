@@ -5,12 +5,13 @@ function App() {
   const [lat, setLat] = useState("43.65");
   const [lon, setLon] = useState("-79.38");
   const [date, setDate] = useState("2025-12-21");
+  const [height, setHeight] = useState("10.2");
   const [data, setData] = useState(null);
 
   const fetchSun = async () => {
     try {
       const res = await fetch(
-        `https://my-suncalc-api.onrender.com/sun?lat=${lat}&lon=${lon}&date=${date}`
+        `https://my-suncalc-api.onrender.com/sun?lat=${lat}&lon=${lon}&date=${date}&height=${height}`
       );
       if (!res.ok) throw new Error("Network error");
       const json = await res.json();
@@ -29,6 +30,13 @@ function App() {
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
+      />
+      <input
+        type="number"
+        step="0.1"
+        value={height}
+        onChange={(e) => setHeight(e.target.value)}
+        placeholder="Height (m)"
       />
       <button onClick={fetchSun}>Get Sun Data</button>
 
