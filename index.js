@@ -24,8 +24,8 @@ app.listen(PORT, () => {
 });
 
 // Existing middleware or API routes…
-app.get("/api/suncalc", (req, res) => {
-  res.json({ message: "CORS OK"});
+app.get("/", (req, res) => {
+  res.send("Welcome to the SunCalc API");
 });
 
 // Export a Lambda handler
