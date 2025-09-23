@@ -1,9 +1,11 @@
+import cors from "cors";
 import express from 'express';
 import serverlessExpress from '@vendia/serverless-express';
-import SunCalc from 'suncalc';
-import cors from "cors";
+import SunCalc from 'suncalc'
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 app.get('/sun', (req, res) => {
   const { lat, lon, date } = req.query;
@@ -20,11 +22,10 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-app.use(cors());
 
 // Existing middleware or API routes…
-app.get("/", (req, res) => {
-  res.send("Welcome to the SunCalc API");
+app.get("/api/suncalc", (req, res) => {
+  res.json({ message: "CORS OK"});
 });
 
 // Export a Lambda handler
